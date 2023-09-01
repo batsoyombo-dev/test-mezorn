@@ -1,32 +1,40 @@
 {
-  "name": "test-mezorn",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/batsoyombo-dev/test-mezorn.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/batsoyombo-dev/test-mezorn/issues"
-  },
-  "homepage": "https://github.com/batsoyombo-dev/test-mezorn#readme",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.17",
-    "@types/node": "^20.5.7",
-    "concurrently": "^8.2.1",
-    "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
-  }
+    "name": "test-mezorn",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "npx tsc",
+        "start": "node dist/index.js",
+        "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/batsoyombo-dev/test-mezorn.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/batsoyombo-dev/test-mezorn/issues"
+    },
+    "homepage": "https://github.com/batsoyombo-dev/test-mezorn#readme",
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/node": "^20.5.7",
+        "@typescript-eslint/eslint-plugin": "^6.5.0",
+        "concurrently": "^8.2.1",
+        "eslint": "^8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-config-standard-with-typescript": "^39.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-n": "^16.0.2",
+        "eslint-plugin-promise": "^6.1.1",
+        "nodemon": "^3.0.1",
+        "prettier": "^3.0.3",
+        "typescript": "^5.2.2"
+    }
 }
