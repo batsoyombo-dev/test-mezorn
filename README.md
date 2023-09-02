@@ -1,6 +1,6 @@
 # REST API
 
-For this project I have used a json dummy data to for all the actions (APIs). (located at src/_mock)
+For this project I have used a json dummy data for all the actions (APIs). (located at src/_mock)
 
 ## Install
 
