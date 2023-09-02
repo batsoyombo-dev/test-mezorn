@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/batsoyombo-dev/test-mezorn#readme",
     "dependencies": {
+        "ajv": "^8.12.0",
         "express": "^4.18.2"
     },
     "devDependencies": {

@@ -22,11 +22,11 @@ class TaskService {
     /**
      * Create task
      *
-     * @param data: TaskModifyParams
+     * @param data: TaskCreateParams
      * @returns void
      */
     createTask(data) {
-        database_1.TASKS.push(Object.assign(Object.assign({}, data), { id: database_1.TASKS[database_1.TASKS.length - 1].id + 1, created_at: Date.now() / 1000, updated_at: Date.now() / 1000 }));
+        database_1.TASKS.push(Object.assign(Object.assign({}, data), { id: database_1.TASKS[database_1.TASKS.length - 1].id + 1, created_at: Math.floor(Date.now() / 1000), updated_at: Math.floor(Date.now() / 1000) }));
     }
     /**
      * Create task
@@ -37,7 +37,7 @@ class TaskService {
      */
     updateTask(task, data) {
         const index = this.findTaskIndex(task.id);
-        database_1.TASKS[index] = Object.assign(Object.assign({}, database_1.TASKS[index]), data);
+        database_1.TASKS[index] = Object.assign(Object.assign(Object.assign({}, database_1.TASKS[index]), data), { updated_at: Math.floor(Date.now() / 1000) });
         return true;
     }
     /**
@@ -108,7 +108,7 @@ class TaskService {
      * @returns void
      */
     addComment(userId, taskId, data) {
-        database_1.TASK_COMMENTS.push(Object.assign(Object.assign({}, data), { id: database_1.TASK_COMMENTS[database_1.TASK_COMMENTS.length - 1].id + 1, user_id: userId, task_id: taskId, created_at: Date.now() / 1000, updated_at: Date.now() / 1000 }));
+        database_1.TASK_COMMENTS.push(Object.assign(Object.assign({}, data), { id: database_1.TASK_COMMENTS[database_1.TASK_COMMENTS.length - 1].id + 1, user_id: userId, task_id: taskId, created_at: Math.floor(Date.now() / 1000), updated_at: Math.floor(Date.now() / 1000) }));
     }
     /**
      * Delete task

@@ -1,10 +1,15 @@
 import { TASKS, TASK_ASSIGNEES, TASK_COMMENTS } from "../database";
 import { Task, User } from "../database/types";
 
-type TaskModifyParams = {
+type TaskCreateParams = {
     title: string;
     description: string;
     group_id: number;
+};
+
+type TaskModifyParams = {
+    title: string;
+    description: string;
 };
 
 class TaskService {
@@ -32,15 +37,15 @@ class TaskService {
     /**
      * Create task
      *
-     * @param data: TaskModifyParams
+     * @param data: TaskCreateParams
      * @returns void
      */
-    createTask(data: TaskModifyParams) {
+    createTask(data: TaskCreateParams) {
         TASKS.push({
             ...data,
             id: TASKS[TASKS.length - 1].id + 1,
-            created_at: Date.now() / 1000,
-            updated_at: Date.now() / 1000,
+            created_at: Math.floor(Date.now() / 1000),
+            updated_at: Math.floor(Date.now() / 1000),
         });
     }
 
@@ -57,6 +62,7 @@ class TaskService {
         TASKS[index] = {
             ...TASKS[index],
             ...data,
+            updated_at: Math.floor(Date.now() / 1000),
         };
 
         return true;
@@ -157,8 +163,8 @@ class TaskService {
             id: TASK_COMMENTS[TASK_COMMENTS.length - 1].id + 1,
             user_id: userId,
             task_id: taskId,
-            created_at: Date.now() / 1000,
-            updated_at: Date.now() / 1000,
+            created_at: Math.floor(Date.now() / 1000),
+            updated_at: Math.floor(Date.now() / 1000),
         });
     }
 
